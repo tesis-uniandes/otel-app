@@ -30,7 +30,7 @@ export class ProductService {
     };
   }
   getProducts(): Observable<ProductModel[]> {
-    return this.http.get<ProductModel[]>(environment.PRODUCT_SERVICE + 'products', this.httpOptions)
+    return this.http.get<ProductModel[]>(environment.PRODUCT_SERVICE + 'products')
     .pipe(
       catchError(this.handleError<ProductModel[]>('getProducts', []))
     );;

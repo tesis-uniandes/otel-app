@@ -5,11 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon'
 import { MatButtonModule } from '@angular/material/button';
-import {MatGridListModule} from '@angular/material/grid-list';
+
 
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
@@ -29,11 +28,9 @@ import { OrdersComponent } from './orders/orders.component'
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule, 
-    MatButtonModule,
-    MatCardModule, 
+    MatButtonModule,    
     MatToolbarModule, 
-    MatIconModule,
-    MatGridListModule
+    MatIconModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

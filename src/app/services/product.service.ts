@@ -9,11 +9,18 @@ import { catchError  } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductService {
-  private httpOptions: any;
-  constructor(private http: HttpClient) {
-    this.httpOptions = {
-      headers: new HttpHeaders({'Content-Type': 'application/json'})
-    };
+
+  product: ProductModel = {
+    id: '',
+    name: '',
+    description: '',
+    price: 0,
+    units: 0,
+    image: ''
+  };
+
+
+  constructor(private http: HttpClient) {    
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
@@ -36,9 +43,10 @@ export class ProductService {
     );;
   }
 
-  getProduct(id: string){
-    return this.http.get(environment.PRODUCT_SERVICE + 'products/'+id, this.httpOptions);
-  }
-
- 
+  getProduct(id: string): Observable<ProductModel>{    
+    return this.http.get<ProductModel>(environment.PRODUCT_SERVICE + 'products/'+id)
+    .pipe(
+      catchError(this.handleError<ProductModel>('getProductById', this.product))
+    );
+  } 
 }

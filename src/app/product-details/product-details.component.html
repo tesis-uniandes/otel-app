@@ -1,1 +1,28 @@
-<p>product-details works!</p>
+<div class="container-fluid">
+    <div class="row text-center">
+        <h2>Detalle del producto </h2>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card-group">
+                <div class="card">                    
+                    <img src="{{product.image}}" class="card-img-top image" alt="Product">                                        
+                </div>
+                <div class="card">                    
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <p>{{product.description}}</p>
+                        <p class="card-text">Valor: {{product.price | number}}</p>
+                        <div class="form-group" style="width: 20%;">
+                            <label for="exampleInputEmail1">Cantidad</label>
+                            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="1" value="1">                            
+                        </div>
+                        <br/><br/>
+                        <button class="btn btn-primary">Agregar al carrito</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
